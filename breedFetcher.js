@@ -8,9 +8,9 @@ const fetchBreedDescription = (breedName, callback) => {
     }
     const data = JSON.parse(body);
     if (data.length) {
-      callback(null, data[0].description)
+      callback(null, data[0].description);
     } else {
-      callback("Invalid breed", null)
+      callback("Invalid breed", null);
     }
   });
 };
