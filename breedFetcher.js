@@ -1,10 +1,10 @@
-const request = require('request');
+const request = require("request");
 
 const fetchBreedDescription = (breedName, callback) => {
-  request('https://api.thecatapi.com/v1/breeds/search?q=' + breedName, (error, response, body) => {
+  const url = `https://api.thecatapi.com/v1/breeds/search?q=${breedName}`;
+  request(url, (error, resp, body) => {
     if (error) {
-      callback("Invalid Address", null);
-      return;
+      return callback("Invalid Address", null);
     }
     const data = JSON.parse(body);
     if (data.length) {
